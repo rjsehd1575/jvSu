@@ -13,6 +13,6 @@ void main()
     System.out.printf("대한민국\n");
     System.out.println("경복대학교");
     System.out.println("Computer");
-    System.out.println("박동건");
+    System.out.println("홍길동");
 
 }
