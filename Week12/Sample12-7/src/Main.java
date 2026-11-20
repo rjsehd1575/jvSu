@@ -31,13 +31,13 @@ void main() throws IOException {
             new Customer("2111", "고동진", '1', 875.4f)};
 
     int count = 0;
-    while(count < customers.length){
+    while (count < customers.length) {
         System.out.printf("%s 고객님의 사용량 입력(예: 12.5) : ", customers[count].name);
         customers[count].usage = input.nextFloat();
 
-        if(customers[count].usage >= 0.0f){
+        if (customers[count].usage >= 0.0f) {
             count++;
-        }else{
+        } else {
             System.err.println("ERROR : 사용량은 0 ~ ");
             System.in.read();
         }
@@ -89,15 +89,16 @@ void main() throws IOException {
         else customers[i].tax = -1;
     }
 
-    for(i =0; i< customers.length; i++){
-        for(int j = 1; j < customers.length; j++){
-            if(customers[j-1].useCharge + customers[j-1].tax < customers[j].useCharge + customers[j].tax){
-                Customer temp = customers[j-1];
-                customers[j-1] = customers[j];
+    for (i = 0; i < customers.length; i++) {
+        for (int j = 1; j < customers.length; j++) {
+            if (customers[j - 1].useCharge + customers[j - 1].tax < customers[j].useCharge + customers[j].tax) {
+                Customer temp = customers[j - 1];
+                customers[j - 1] = customers[j];
                 customers[j] = temp;
             }
         }
     }
+
     System.out.println("************************************************************");
     System.out.println("수도번호 고객명 구분   사용량     사용금액        세금      납부금액    비고 ");
     System.out.println("************************************************************");
